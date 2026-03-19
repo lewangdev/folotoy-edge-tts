@@ -12,6 +12,36 @@ A lightweight, drop-in replacement for OpenAI's Text-to-Speech API, powered by M
 
 ## Quick Start
 
+### Using Docker (recommended)
+
+```bash
+docker run -d -p 8000:8000 lewangdev/folotoy-edge-tts
+```
+
+Or build the image locally:
+
+```bash
+docker build -t folotoy-edge-tts .
+docker run -d -p 8000:8000 folotoy-edge-tts
+```
+
+### Using Docker Compose
+
+```yaml
+services:
+  edge-tts:
+    image: lewangdev/folotoy-edge-tts
+    ports:
+      - "8000:8000"
+    restart: unless-stopped
+```
+
+```bash
+docker compose up -d
+```
+
+### Using pip
+
 ```bash
 pip install -r requirements.txt
 python server.py
